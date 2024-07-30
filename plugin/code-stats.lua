@@ -11,8 +11,10 @@ vim.api.nvim_create_autocmd({ "InsertCharPre" }, {
 vim.api.nvim_create_autocmd({ "BufWrite", "BufLeave" }, {
     group = augroup_id,
     callback = function()
-        codestats.add_xp(vim.o.filetype, vim.b.xp or 0)
-        vim.b.xp = 0
+        if vim.b.xp then
+            codestats.add_xp(vim.o.filetype, vim.b.xp)
+            vim.b.xp = 0
+        end
     end,
 })
 vim.api.nvim_create_autocmd("VimLeavePre", {
