@@ -11,7 +11,7 @@ version = modrev ..'-'.. specrev
 description = {
   summary = 'Code::Stats plugin for Neovim',
   detailed = '',
-  labels = { },
+  labels = { 'vim', 'lua', 'neovim', 'code-stats' },
   homepage = 'https://github.com/Freed-Wu/code-stats.nvim',
   license = 'GPL-3.0'
 }
