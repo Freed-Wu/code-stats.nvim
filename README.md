@@ -67,9 +67,13 @@ $ luarocks --lua-version 5.1 --local --tree ~/.local/share/nvim/rocks install co
 ## Configure
 
 ```lua
-require"code-stats".setup({args = {headers = {
-    ['X-API-Token'] = "XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-}}})
+require"code-stats".setup({
+    args = {
+        headers = {
+            ['X-API-Token'] = "XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+    }
+})
 ```
 
 ## Related Projects
