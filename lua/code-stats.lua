@@ -703,13 +703,15 @@ end
 ---@param xp integer
 function M.add_xp(filetype, xp)
     local language_type = M.filetypes[filetype] or filetype
-    M.xps[language_type] = M.xps[language_type] or 0
-    M.xps[language_type] = M.xps[language_type] + xp
+    M.xps[language_type] = (M.xps[language_type] or 0) + xp
 end
 
 ---send xp
 ---@return table
 function M.send_xp()
+    if #M.xps == 0 then
+        return {}
+    end
     local xps = M.xps
     M.xps = {}
     local args = M.args
