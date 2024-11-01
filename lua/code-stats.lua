@@ -696,6 +696,11 @@ local M = {
 ---@param conf table
 function M.setup(conf)
     M = vim.tbl_deep_extend("keep", conf, M)
+    if conf.dotenv then
+        local dotenv = require "lua-dotenv"
+        dotenv.load_dotenv(conf.dotenv)
+        M.args.headers['X-API-Token'] = dotenv.get('CODESTATS_API_KEY')
+    end
 end
 
 ---add xp

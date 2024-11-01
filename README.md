@@ -76,6 +76,23 @@ require"code-stats".setup({
 })
 ```
 
+For compatibility for
+[code-stats-zsh](https://gitlab.com/code-stats/code-stats-zsh) and
+[code-stats-bash](https://github.com/Freed-Wu/code-stats-bash), the following is
+also OK:
+
+```lua
+require"code-stats".setup({
+    dotenv = "/the/path/of/codestats.sh"
+})
+```
+
+`/the/path/of/codestats.sh`:
+
+```sh
+CODESTATS_API_KEY=XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
 ## Related Projects
 
 - [code-stats-vim](https://gitlab.com/code-stats/code-stats-vim)

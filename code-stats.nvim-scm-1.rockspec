@@ -16,7 +16,7 @@ description = {
   license = 'GPL-3.0'
 }
 
-dependencies = { 'lua >= 5.1', 'lua-requests' }
+dependencies = { 'lua >= 5.1', 'lua-requests', 'lua-dotenv' }
 
 test_dependencies = { }
 
