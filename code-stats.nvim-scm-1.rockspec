@@ -33,5 +33,5 @@ end
 
 build = {
   type = 'builtin',
-  copy_directories = { 'plugin' } ,
+  copy_directories = { 'plugin', 'assets', 'scripts' } ,
 }

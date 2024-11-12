@@ -33,6 +33,9 @@
 
 ## Install
 
+**NOTE**: upstream xml has been [broken](https://github.com/lubyk/xml/pull/20).
+use the [fork](assets/rockspecs/xml-1.1.3-1.rockspec) before installing.
+
 ### rocks.nvim
 
 #### Command style
@@ -76,7 +79,7 @@ require"code-stats".setup({
 })
 ```
 
-For compatibility for
+For compatibility of
 [code-stats-zsh](https://gitlab.com/code-stats/code-stats-zsh) and
 [code-stats-bash](https://github.com/Freed-Wu/code-stats-bash), the following is
 also OK:
@@ -92,6 +95,12 @@ require"code-stats".setup({
 ```sh
 CODESTATS_API_KEY=XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
+## Tips
+
+For Nix user, run
+`/the/path/of/luarocks/rocks-5.1/code-stats.nvim/VERSION/scripts/update.sh` when
+dynamic link libraries are broken after `nix-collect-garbage -d`.
 
 ## Related Projects
 
