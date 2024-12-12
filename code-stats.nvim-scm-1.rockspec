@@ -33,5 +33,14 @@ end
 
 build = {
   type = 'builtin',
-  copy_directories = { 'plugin', 'assets', 'scripts' } ,
+  copy_directories = { 'plugin', 'assets' } ,
+  install = {
+    conf = {
+      ['..'] = 'shell.nix',
+      ['../scripts/update.sh'] = 'scripts/update.sh',
+      ['../scripts/get-OPENSSL_INCDIR.nix'] = 'scripts/get-OPENSSL_INCDIR.nix',
+      ['../scripts/get-OPENSSL_LIBDIR.nix'] = 'scripts/get-OPENSSL_LIBDIR.nix',
+      ['../scripts/get-STDCPP_LIBDIR.nix'] = 'scripts/get-STDCPP_LIBDIR.nix',
+    },
+  },
 }

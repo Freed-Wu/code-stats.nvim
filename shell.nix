@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> { } }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 with pkgs;
 mkShell {
@@ -6,5 +8,11 @@ mkShell {
   buildInputs = [
     stdenv.cc
     openssl
+    (luajit.withPackages (
+      p: with p; [
+        busted
+        ldoc
+      ]
+    ))
   ];
 }
