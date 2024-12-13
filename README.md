@@ -1,5 +1,6 @@
 # code-stats.nvim
 
+[![readthedocs](https://shields.io/readthedocs/code-stats-nvim)](https://code-stats-nvim.readthedocs.io)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/code-stats.nvim/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/code-stats.nvim/main)
 [![github/workflow](https://github.com/Freed-Wu/code-stats.nvim/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/code-stats.nvim/actions)
 
