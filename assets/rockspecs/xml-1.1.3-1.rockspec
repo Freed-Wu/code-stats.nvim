@@ -1,7 +1,7 @@
 package = "xml"
 version = "1.1.3-1"
 source = {
-  url = 'git://github.com/larkwiot/xml',
+  url = 'git://github.com/lubyk/xml',
   dir = 'xml',
 }
 description = {
