@@ -1,5 +1,5 @@
-local git_ref = 'f6ed20a01bb7669130cae23e50fc50a8916ac99c'
-local modrev = 'scm'
+local git_ref = 'scm'
+local modrev = git_ref
 local specrev = '1'
 
 local repo_url = 'https://github.com/Freed-Wu/code-stats.nvim'
@@ -22,7 +22,7 @@ test_dependencies = { }
 
 source = {
   url = repo_url .. '/archive/' .. git_ref .. '.zip',
-  dir = 'code-stats.nvim-' .. 'f6ed20a01bb7669130cae23e50fc50a8916ac99c',
+  dir = 'code-stats.nvim-' .. modrev,
 }
 
 if modrev == 'scm' or modrev == 'dev' then
