@@ -34,9 +34,6 @@
 
 ## Install
 
-**NOTE**: upstream xml has been [broken](https://github.com/lubyk/xml/pull/20).
-use the [fork](assets/rockspecs/xml-1.1.3-1.rockspec) before installing.
-
 ### rocks.nvim
 
 #### Command style
