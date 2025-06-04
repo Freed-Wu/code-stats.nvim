@@ -1,53 +1,3 @@
-local git_ref = '$git_ref'
-local modrev = '$modrev'
-local specrev = '$specrev'
-
-local repo_url = '$repo_url'
-
-rockspec_format = '3.0'
-package = '$package'
-version = modrev ..'-'.. specrev
-
-description = {
-  summary = '$summary',
-  detailed = $detailed_description,
-  labels = $labels,
-  homepage = '$homepage',
-  $license
-}
-
-build_dependencies = { 'luarocks-build-embedded-rockspecs' }
-
-dependencies = { 'lua >= 5.1', 'lua-requests', 'lua-dotenv' }
-
-test_dependencies = $test_dependencies
-
-source = {
-  url = repo_url .. '/archive/' .. git_ref .. '.zip',
-  dir = '$repo_name-' .. '$archive_dir_suffix',
-}
-
-if modrev == 'scm' or modrev == 'dev' then
-  source = {
-    url = repo_url:gsub('https', 'git')
-  }
-end
-
-build = {
-  type = "embedded-rockspecs",
-  delegate_type = "builtin",
-  copy_directories = $copy_directories,
-  install = {
-    conf = {
-      ['..'] = 'shell.nix',
-      ['../scripts/update.sh'] = 'scripts/update.sh',
-      ['../scripts/get-OPENSSL_INCDIR.nix'] = 'scripts/get-OPENSSL_INCDIR.nix',
-      ['../scripts/get-OPENSSL_LIBDIR.nix'] = 'scripts/get-OPENSSL_LIBDIR.nix',
-      ['../scripts/get-STDCPP_LIBDIR.nix'] = 'scripts/get-STDCPP_LIBDIR.nix',
-    },
-  },
-    rockspecs = {
-[==[
 package = "xml"
 version = "1.1.3-1"
 source = {
@@ -121,6 +71,4 @@ build = {
       },
     },
   },
-}
-]==],
 }
