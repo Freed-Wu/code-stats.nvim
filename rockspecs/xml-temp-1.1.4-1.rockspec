@@ -1,8 +1,10 @@
-package = "xml"
-version = "1.1.3-1"
+package = "xml-temp"
+version = "1.1.4-1"
+local git_ref = '3eb208a4c9847659d0e7856781e821a62f9c6de6'
+local repo_url = 'https://github.com/lubyk/xml'
 source = {
-  url = 'git://github.com/lubyk/xml',
-  dir = 'xml',
+  url = repo_url .. '/archive/' .. git_ref .. '.zip',
+  dir = 'xml-' .. git_ref,
 }
 description = {
   summary = "Very fast xml parser based on RapidXML",
