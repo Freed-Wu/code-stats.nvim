@@ -33,7 +33,7 @@ end
 
 build = {
   type = 'builtin',
-  copy_directories = { 'plugin', 'assets', 'scripts' } ,
+  copy_directories = { 'plugin', 'scripts' } ,
   install = {
     conf = {
       ['..'] = 'shell.nix',
