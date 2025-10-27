@@ -68,13 +68,15 @@ $ luarocks --lua-version 5.1 --local --tree ~/.local/share/nvim/rocks install co
 ## Configure
 
 ```lua
-require"code-stats".setup({
+local CodeStats = require 'code-stats.nvim.codestats'.CodeStats
+local codestats = CodeStats {
     args = {
         headers = {
             ['X-API-Token'] = "XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         }
     }
-})
+}
+codestats:create_autocmds()
 ```
 
 For compatibility of
@@ -83,9 +85,11 @@ For compatibility of
 also OK:
 
 ```lua
-require"code-stats".setup({
+local CodeStats = require 'code-stats.nvim.codestats'.CodeStats
+local codestats = CodeStats {
     dotenv = "/the/path/of/codestats.sh"
-})
+}
+codestats:create_autocmds()
 ```
 
 `/the/path/of/codestats.sh`:

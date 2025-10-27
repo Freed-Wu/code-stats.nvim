@@ -72,7 +72,3 @@ repos:
       - id: markdownlint-cli2
         additional_dependencies:
           - markdown-it-texmath
-  - repo: https://github.com/lunarmodules/luacheck
-    rev: v1.2.0
-    hooks:
-      - id: luacheck
