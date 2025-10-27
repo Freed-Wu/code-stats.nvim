@@ -25,16 +25,10 @@ local M = {
 ---@return table codestats
 function M.CodeStats:new(codestats)
     codestats = codestats or {}
-    codestats.args = codestats.args or M.CodeStats.args
-    codestats.args.url = codestats.args.url or M.CodeStats.args.url
-    codestats.args.headers = codestats.args.headers or M.CodeStats.args.headers
-    codestats.args.headers['Content-Type'] = codestats.args.headers['Content-Type'] or
-        M.CodeStats.args.headers['Content-Type']
-    codestats.args.headers['User-Agent'] =
-        codestats.args.headers['User-Agent'] or M.CodeStats.args.headers['User-Agent']
-    codestats.args.headers.Accept = codestats.args.headers.Accept or M.CodeStats.args.headers.Accept
     if codestats.dotenv then
         dotenv.load_dotenv(codestats.dotenv)
+        codestats.args = codestats.args or M.CodeStats.args
+        codestats.args.headers = codestats.args.headers or M.CodeStats.args.headers
         codestats.args.headers['X-API-Token'] = dotenv.get('CODESTATS_API_KEY')
     end
     codestats.args.headers['X-API-Token'] = codestats.args.headers['X-API-Token'] or
