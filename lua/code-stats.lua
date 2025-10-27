@@ -12,8 +12,7 @@ local M = {
             url = "https://codestats.net/",
             headers = {
                 ['Content-Type'] = 'application/json',
-                ['User-Agent'] = 'code-stats-nvim/0.0.1',
-                ['X-API-Token'] = "",
+                ['User-Agent'] = 'code-stats-nvim/0.1.0',
                 Accept = '*/*'
             },
         },
@@ -31,8 +30,6 @@ function M.CodeStats:new(codestats)
         codestats.args.headers = codestats.args.headers or M.CodeStats.args.headers
         codestats.args.headers['X-API-Token'] = dotenv.get('CODESTATS_API_KEY')
     end
-    codestats.args.headers['X-API-Token'] = codestats.args.headers['X-API-Token'] or
-        M.CodeStats.args.headers['X-API-Token']
     setmetatable(codestats, {
         __index = self
     })

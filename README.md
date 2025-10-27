@@ -69,10 +69,12 @@ $ luarocks --lua-version 5.1 --local --tree ~/.local/share/nvim/rocks install co
 
 ```lua
 local CodeStats = require 'code-stats.nvim.codestats'.CodeStats
-local args = CodeStats.args
-args.headers['X-API-Token'] = "XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 local codestats = CodeStats {
-    args = args
+    args = vim.tbl_deep_extend('force', CodeStats.args, {
+        headers = {
+            ['X-API-Token'] = "XXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+    })
 }
 codestats:create_autocmds()
 ```
