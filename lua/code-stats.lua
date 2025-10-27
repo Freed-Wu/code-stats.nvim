@@ -1,4 +1,5 @@
 --- functions for codestats
+local dotenv = require "lua-dotenv"
 local requests = require "requests"
 local cjson = require "cjson"
 
@@ -698,7 +699,6 @@ local M = {
 function M.setup(conf)
     M = vim.tbl_deep_extend("keep", conf, M)
     if conf.dotenv then
-        local dotenv = require "lua-dotenv"
         dotenv.load_dotenv(conf.dotenv)
         M.args.headers['X-API-Token'] = dotenv.get('CODESTATS_API_KEY')
     end
@@ -715,7 +715,11 @@ end
 ---send xp
 ---@return table
 function M.send_xp()
-    if #M.xps == 0 then
+    local xp = 0
+    for _, v in pairs(M.xps) do
+        xp = xp + v
+    end
+    if xp == 0 then
         return {}
     end
     local xps = M.xps
