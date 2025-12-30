@@ -1,6 +1,6 @@
 --- base class for CodeStats
 local requests = require "requests"
-local cjson = require "cjson"
+local json = require "cjson"
 local dotenv = require "lua-dotenv"
 
 local M = {
@@ -61,7 +61,7 @@ function M.CodeStats:send_xp()
     local xps = self.xps
     self.xps = {}
     local args = self.args
-    args.data = cjson.encode({ xps = xps, coded_at = os.date("!%Y-%m-%dT%H:%M:%S") })
+    args.data = json.encode({ xps = xps, coded_at = os.date("!%Y-%m-%dT%H:%M:%S") })
     return requests.get(args)
 end
 
