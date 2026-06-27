@@ -11,8 +11,8 @@ mkShell {
     OPENSSL_LIBDIR = "${openssl.out}/lib";
   };
   buildInputs = [
-    stdenv.cc
     openssl
+
     (luajit.withPackages (
       p: with p; [
         busted
