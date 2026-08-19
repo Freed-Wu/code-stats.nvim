@@ -9,6 +9,7 @@ local M = {
         time = 0,
         interval = 10000,
         args = {
+            timeout = 0.5,
             url = "https://codestats.net/",
             headers = {
                 ['Content-Type'] = 'application/json',
@@ -16,7 +17,8 @@ local M = {
                 Accept = '*/*'
             },
         },
-        filetypes = require 'code-stats.filetype'
+        ---<https://gitlab.com/code-stats/code-stats-vim/-/blob/fb545a1814dc0d001e185c8f1dde564f2f0ea358/pythonx/codestats_filetypes.py>
+        filetypes = json.decode(debug.getinfo(1).source:match("@?(.*)/") .. "filetype.json")
     }
 }
 
