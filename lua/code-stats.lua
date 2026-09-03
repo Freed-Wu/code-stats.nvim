@@ -2,7 +2,12 @@
 local requests = require "requests"
 local json = require "cjson"
 local dotenv = require "lua-dotenv"
-
+local f = io.open(debug.getinfo(1).source:match("@?(.*).lua$") .. "/filetype.json")
+local content = "{}"
+if f then
+    content = f:read("*a")
+    f:close()
+end
 local M = {
     CodeStats = {
         xps = {},
@@ -18,7 +23,7 @@ local M = {
             },
         },
         ---<https://gitlab.com/code-stats/code-stats-vim/-/blob/fb545a1814dc0d001e185c8f1dde564f2f0ea358/pythonx/codestats_filetypes.py>
-        filetypes = json.decode(debug.getinfo(1).source:match("@?(.*)/") .. "filetype.json")
+        filetypes = json.decode(content)
     }
 }
 

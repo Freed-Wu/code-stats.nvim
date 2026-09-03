@@ -39,8 +39,8 @@
     "ocaml": "OCaml",
     "pascal": "Pascal",
     "perl": "Perl",
-    "perl6": "Perl 6",
-    "pgsql": "SQL (argsgreSQL)",
+    "raku": "Perl 6",
+    "pgsql": "SQL (postgreSQL)",
     "php": "PHP",
     "plsql": "PL/SQL",
     "puppet": "Puppet",
@@ -57,12 +57,12 @@
     "tcl": "Tcl",
     "tcsh": "Shell Script (tcsh)",
     "tex": "TeX",
+    "text": "Plain text",
     "toml": "TOML",
     "typescript": "TypeScript",
     "vb": "Visual Basic",
     "vbnet": "Visual Basic .NET",
     "vim": "VimL",
     "yaml": "YAML",
-    "zsh": "Shell Script (Zsh)",
-    "Jenkinsfile": "Jenkinsfile"
+    "zsh": "Shell Script (Zsh)"
 }
