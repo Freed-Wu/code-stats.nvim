@@ -4,7 +4,7 @@ local json = require "cjson"
 local dotenv = require "lua-dotenv"
 local datafile = require 'datafile'
 local f = datafile.open("conf/filetype.json") or
-    io.open(debug.getinfo(1).source:match("@?(.*/)lua/[^/]+$") .. "etc/conf/filetype.json")
+    io.open(debug.getinfo(1).source:match("@?(.*/)[^/]+/[^/]+$") .. "etc/conf/filetype.json")
 local content = "{}"
 if f then
     content = f:read("*a")
